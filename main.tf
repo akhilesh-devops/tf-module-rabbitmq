@@ -49,6 +49,6 @@ resource "aws_route53_record" "main" {
   zone_id = var.zone_id
   name    = "rabbitmq-${var.env}"
   type    = "A"
-  ttl     = 300
-  records = [aws_instance.main.id]
+  ttl     = 30
+  records = [aws_instance.main.private_ip]
 }
